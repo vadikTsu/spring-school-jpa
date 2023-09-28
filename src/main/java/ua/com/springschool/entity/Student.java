@@ -28,7 +28,7 @@ public class Student {
     @JoinColumn(name = "group_id")
     private Group group;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.REMOVE)
     @JoinTable(
             name = "student_course",
             joinColumns = @JoinColumn(name = "student_id"),

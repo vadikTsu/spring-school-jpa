@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
@@ -23,6 +22,6 @@ public class Group {
     private UUID id;
     private String name;
 
-    @OneToMany(mappedBy = "group", targetEntity = Student.class)
+    @OneToMany(mappedBy = "group", cascade = CascadeType.REMOVE)
     private Set<Student> students;
 }

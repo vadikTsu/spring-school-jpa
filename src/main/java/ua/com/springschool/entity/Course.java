@@ -22,6 +22,6 @@ public class Course {
     private UUID id;
     private String name;
 
-    @ManyToMany(mappedBy = "course")
+    @ManyToMany(mappedBy = "courses")
     private Set<Student> students;
 }
